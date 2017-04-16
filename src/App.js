@@ -190,19 +190,6 @@ const Example = React.createClass({
         return { rows: this.createRows(), filters: {} };
     },
 
-    createRows() {
-        let rows = [];
-        for (let i = 1; i < 1000; i++) {
-            rows.push({
-                id: i,
-                title: 'Title ' + i,
-                count: i * 1000
-            });
-        }
-
-        this._rows = rows;
-    },
-
     getRandomDate(start, end) {
         return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime())).toLocaleDateString();
     },

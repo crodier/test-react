@@ -3,7 +3,7 @@
   font-size: small;
   background-color: black;
   color: lightgreen;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'DejaVu Sans Mono', sans-serif;
 }
 
 .App-logo {
@@ -19,8 +19,73 @@
 }
 
 .App-intro {
-  font-size: small ;
+  font-size: medium;
 }
+
+/* This ultimately changed the row background */
+div.react-grid-Row:hover div.react-grid-Cell{background-color:blue}.react-grid-Row:hover .rdg-row-index{display:none}
+
+div.react-grid-Cell {
+    background-color: crimson;
+}
+
+.react-grid-Row.disabled {
+    background-color: blue;
+}
+
+
+.react-grid-Row.enabled:hover {
+    background-color: bisque;
+}
+
+div.react-grid-Row.react-grid-Row--odd:hover {
+    background-color: bisque;
+}
+
+div.react-grid-Row.row-selected {
+    background-color: #DBECFA;
+}
+
+div.react-grid-Row .row-selected{
+    background-color: #DBECFA;
+}
+
+.react-grid-Row.row-selected{
+    background-color: #DBECFA;
+}
+
+.react-grid-Row .row-selected{
+    background-color: #DBECFA;
+}
+
+div.react-grid-Cell {
+    background-color: purple;
+}
+
+div.react-grid-Cell:hover {
+    background-color: brown;
+}
+
+div.react-grid-Cell:hover {
+    background-color: orange;
+}
+
+div.react-grid-Row.react-grid-Row--odd.disabled:hover {
+    background-color: purple;
+}
+
+div.react-grid-Row.react-grid-Row--even.enabled:hover {
+    background-color: darkgray;
+}
+
+div.react-grid-Row.react-grid-Row--odd.enabled:hover {
+    background-color: purple;
+}
+
+div.react-grid-Row.react-grid-Row--even.disabled:hover {
+    background-color: darkgray;
+}
+
 
 div.react-grid-HeaderCell {
   background-color: blue;
