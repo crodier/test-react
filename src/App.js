@@ -183,7 +183,7 @@ const Example = React.createClass({
         this._columns = [
             { key: 'id', name: 'ID', width: 50, filterable: true },
             { key: 'task', name: 'Title',width: 100, filterable: true },
-            { key: 'complete', name: 'Count',width: 40, filterable: true },
+            { key: 'complete', name: 'Count',width: 60, filterable: true },
             { key: 'issueType', name: 'Iss Type',width: 100, filterable: true } ,
             { key: 'startDate', name: 'Start Date',width: 100, filterable: true } ];
 
@@ -230,6 +230,7 @@ const Example = React.createClass({
     },
 
     handleFilterChange(filter) {
+        // TODO:  Send the filter change to the server
         let newFilters = Object.assign({}, this.state.filters);
         if (filter.filterTerm) {
             newFilters[filter.column.key] = filter;
@@ -244,6 +245,8 @@ const Example = React.createClass({
         return  (
             <div className="myGrid">
                 <ReactDataGrid
+                    headerRowHeight={30}
+                    rowHeight={20}
                     columns={this._columns}
                     rowGetter={this.rowGetter}
                     rowsCount={this.getSize()}
