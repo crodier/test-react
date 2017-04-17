@@ -242,6 +242,24 @@ const Example = React.createClass({
 
     render() {
 
+        var ws = new WebSocket("ws://localhost:9090");
+
+        ws.onmessage = function(event) {
+            console.log(event)
+            var text = new FileReader().readAsText(event.data);
+            console.log(text)
+        };
+
+        ws.onopen = function(event) {
+            ws.send("hi");
+        };
+
+        // Handle any errors that occur.
+        ws.onerror = function(error) {
+            console.log('WebSocket Error: ' + error);
+        };
+
+
         return  (
             <div className="myGrid">
                 <ReactDataGrid

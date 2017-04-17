@@ -1,9 +1,8 @@
 .App {
   text-align: center;
-  font-size: small;
   background-color: black;
   color: white;
-  font-family: 'DejaVu Sans Mono', sans-serif;
+  font-family: 'Roboto', sans-serif;  font-size: medium;
 }
 
 .App-logo {
