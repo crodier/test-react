@@ -1,22 +1,19 @@
 cmake_minimum_required(VERSION 2.8.9)
 set (CMAKE_CXX_STANDARD 11)
 
-set (CMAKE_BUILD_TYPE Debug)
-# SET(CMAKE_CXX_FLAGS_DISTRIBUTION -O0")
-set(CMAKE_CXX_FLAGS_DEBUG "-g -Wall")
-set(CMAKE_CXX_FLAGS_RELEASE "-g -Wall")
-
 set(CMAKE_CXX_FLAGS "-g -Wall")
 
+MESSAGE( STATUS "CMAKE_CXX_COMPILER: " ${CMAKE_CXX_COMPILER} )
 MESSAGE( STATUS "CMAKE_CXX_FLAGS: " ${CMAKE_CXX_FLAGS} )
 
 project (server)
 
+# installed uWS here, by build and making as root
 INCLUDE_DIRECTORIES(/usr/include/uWS)
-# libuWS is installed in /usr/lib
-# LINK_DIRECTORIES(/usr/lib /lib/x86_64-linux-gnu)
 
 add_executable(server server.cpp)
+
+# libraries needed by uWS
 target_link_libraries(server pthread uWS z ssl uv)
 
 
