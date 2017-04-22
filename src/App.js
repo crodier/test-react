@@ -242,16 +242,19 @@ const Example = React.createClass({
 
     render() {
 
-        var ws = new WebSocket("ws://localhost:9090");
+        var ws = new WebSocket("ws://localhost:9999/somePathHere");
 
         ws.onmessage = function(event) {
-            console.log(event)
-            var text = new FileReader().readAsText(event.data);
-            console.log(text)
+            console.log(event);
+            // if blob (julia), do a file reader
+            // var text = new FileReader().readAsText(event.data);
+            console.log('event returned: '+event.data);
         };
 
         ws.onopen = function(event) {
+            console.log('Opened connection in websocket')
             ws.send("hi");
+            console.log('sent hi');
         };
 
         // Handle any errors that occur.
